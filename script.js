@@ -1,8 +1,6 @@
-require("dotenv").config(); // Загружаем переменные окружения из .env
+const API_TOKEN = process.env.API_TOKEN; // Переменные из Netlify
 
-const API_TOKEN = process.env.API_TOKEN; // Берём токен из .env
-
-// Ключи полей из .env
+// Ключи полей из переменных окружения Netlify
 const FIELD_KEYS = {
   city: process.env.CITY_FIELD_KEY,
   state: process.env.STATE_FIELD_KEY,
@@ -14,12 +12,11 @@ const FIELD_KEYS = {
   lastName: process.env.LAST_NAME_FIELD_KEY,
 };
 
-// Проверяем, есть ли все необходимые переменные
+// Проверяем, что переменные окружения существуют
 if (!API_TOKEN || Object.values(FIELD_KEYS).some((key) => !key)) {
   console.error(
-    "Не все переменные окружения установлены. Убедитесь, что все ключи заданы в файле .env"
+    "Не все переменные окружения установлены. Проверь настройки Netlify Environment Variables."
   );
-  process.exit(1);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
