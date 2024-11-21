@@ -1,4 +1,3 @@
-/* Общие стили */
 body {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
@@ -9,7 +8,6 @@ body {
   min-height: 100vh;
 }
 
-/* Контейнер формы */
 .form-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -22,7 +20,6 @@ body {
   max-width: 1200px;
 }
 
-/* Секции формы */
 .form-section {
   background: #ffffff;
   border: 1px solid #e0e0e0;
@@ -36,7 +33,6 @@ h3 {
   color: #333;
 }
 
-/* Строки формы */
 .form-row {
   display: flex;
   gap: 10px;
@@ -47,7 +43,6 @@ h3 {
   flex: 1;
 }
 
-/* Поля ввода */
 input,
 select,
 textarea {
@@ -59,14 +54,12 @@ textarea {
   background-color: #f9f9f9;
 }
 
-/* Текстовые области */
 textarea {
   resize: none;
   height: 60px;
   width: 100%;
 }
 
-/* Поля ввода времени и даты */
 input[type="date"],
 input[type="time"] {
   padding: 8px;
@@ -74,7 +67,6 @@ input[type="time"] {
   color: #333;
 }
 
-/* Стили при фокусе */
 input:focus,
 select:focus,
 textarea:focus {
@@ -82,7 +74,6 @@ textarea:focus {
   outline: none;
 }
 
-/* Кнопки */
 .form-buttons {
   grid-column: 1 / -1;
   display: flex;
