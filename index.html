@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Example</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form class="form-container" id="jobForm">
+      <!-- Client Details -->
+      <div class="form-section">
+        <h3>Client details</h3>
+        <div class="form-row">
+          <input type="text" id="firstName" placeholder="First name" />
+          <input type="text" id="lastName" placeholder="Last name" />
+        </div>
+        <div class="form-row">
+          <input type="text" id="phone" placeholder="Phone" />
+        </div>
+        <div class="form-row">
+          <input type="email" id="email" placeholder="Email (optional)" />
+        </div>
+      </div>
+
+      <!-- Job Details -->
+      <div class="form-section">
+        <h3>Job details</h3>
+        <div class="form-row">
+          <select id="jobType">
+            <option value="">Job type</option>
+            <option value="full-time">Full-Time</option>
+            <option value="part-time">Part-Time</option>
+            <option value="contract">Contract</option>
+            <option value="freelance">Freelance</option>
+          </select>
+          <select id="jobSource">
+            <option value="">Job source</option>
+            <option value="referral">Referral</option>
+            <option value="online-posting">Online Posting</option>
+            <option value="agency">Recruitment Agency</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <textarea
+            id="jobDescription"
+            placeholder="Job description (optional)"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Service Location -->
+      <div class="form-section">
+        <h3>Service location</h3>
+        <div class="form-row">
+          <input type="text" id="address" placeholder="Address" />
+        </div>
+        <div class="form-row">
+          <input type="text" id="city" placeholder="City" />
+          <input type="text" id="state" placeholder="State" />
+        </div>
+        <div class="form-row">
+          <input type="text" id="zipCode" placeholder="Zip code" />
+          <select id="area">
+            <option value="">Area</option>
+            <option value="urban">Urban</option>
+            <option value="suburban">Suburban</option>
+            <option value="rural">Rural</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Scheduled -->
+      <div class="form-section">
+        <h3>Scheduled</h3>
+        <div class="form-row">
+          <input type="date" id="startDate" placeholder="Start date" />
+        </div>
+        <div class="form-row">
+          <input type="time" id="startTime" placeholder="Start time" />
+          <input type="time" id="endTime" placeholder="End time" />
+        </div>
+        <div class="form-row">
+          <select id="testSelect">
+            <option value="">Test select</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="form-buttons">
+        <button class="btn btn-yellow" id="createJob">Create job</button>
+        <button type="button" class="btn btn-grey" id="resetForm">
+          Save info
+        </button>
+      </div>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
