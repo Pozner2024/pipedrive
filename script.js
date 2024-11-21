@@ -69,14 +69,14 @@ document.getElementById("jobForm").addEventListener("submit", async (e) => {
 
     // Создаем контакт в Pipedrive
     const personResponse = await fetch(
-      https://api.pipedrive.com/v1/persons?api_token=${API_TOKEN},
+      `https://api.pipedrive.com/v1/persons?api_token=${API_TOKEN}`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: ${formData.firstName} ${formData.lastName}, // Имя контакта
+          name: `${formData.firstName} ${formData.lastName}`, // Имя контакта
           phone: formData.phone, // Телефон
           email: formData.email, // Электронная почта
         }),
@@ -92,14 +92,14 @@ document.getElementById("jobForm").addEventListener("submit", async (e) => {
 
     // Создаем сделку в Pipedrive
     const dealResponse = await fetch(
-      https://api.pipedrive.com/v1/deals?api_token=${API_TOKEN},
+      `https://api.pipedrive.com/v1/deals?api_token=${API_TOKEN}`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          title: Job for ${formData.firstName} ${formData.lastName},
+          title: `Job for ${formData.firstName} ${formData.lastName}`,
           person_id: personId,
           custom_fields: {
             f303490f937e4f99fa3f4a50a8e596e9b84f519: formData.city, // City
@@ -123,16 +123,16 @@ document.getElementById("jobForm").addEventListener("submit", async (e) => {
     const dealId = dealData.data.id;
 
     // Создаём ссылку на сделку
-    const dealUrl = https://np4.pipedrive.com/deal/${dealId};
+    const dealUrl = `https://np4.pipedrive.com/deal/${dealId}`;
 
     // Перерисовываем содержимое страницы
     const formContainer = document.getElementById("jobForm");
-    formContainer.innerHTML = 
+    formContainer.innerHTML = `
       <div class="success-message">
         <p>Deal created successfully!</p>
         <a href="${dealUrl}" target="_blank" class="btn btn-link">View Deal</a>
       </div>
-    ;
+    `;
   } catch (error) {
     console.error("Ошибка:", error);
     alert("Ошибка при отправке данных.");
